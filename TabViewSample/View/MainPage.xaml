@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TabViewSample.MainPage"
+             xmlns:tabView="clr-namespace:Syncfusion.Maui.TabView;assembly=Syncfusion.Maui.TabView"
+             WidthRequest="{x:OnPlatform WinUI='500'}">
+
+    <Grid ColumnDefinitions="50,*,50" HorizontalOptions="Center" RowDefinitions="50,*">
+        <Label Text=">"  Grid.Column="0"
+                Rotation="180" TextColor="Black"
+                FontSize="Medium"
+                VerticalTextAlignment="Center" 
+                HorizontalTextAlignment="Center"
+                Background="Transparent">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="LeftArrowClicked"/>
+            </Label.GestureRecognizers>
+        </Label>
+        <tabView:SfTabView x:Name="tabView" 
+                           Grid.Column="1" 
+                           SelectionChanged="tabView_SelectionChanged"
+                           TabBarBackground="HotPink">
+            <tabView:SfTabView.Items >
+                <tabView:SfTabItem Header="Call" x:Name="call">
+                </tabView:SfTabItem>
+
+                <tabView:SfTabItem Header="Favorite"  x:Name="favorite" >
+                </tabView:SfTabItem>
+
+                <tabView:SfTabItem Header="Contacts"  x:Name="contacts">
+                </tabView:SfTabItem>
+
+                <tabView:SfTabItem Header="More"  x:Name="more">
+                </tabView:SfTabItem>
+            </tabView:SfTabView.Items>
+        </tabView:SfTabView>
+
+
+        <Label Text=">" Grid.Column="2"
+                TextColor="Black"
+                FontSize="Medium"
+                VerticalTextAlignment="Center" 
+                HorizontalTextAlignment="Center"
+                Background="Transparent">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="RightArrowClicked"/>
+            </Label.GestureRecognizers>
+        </Label>
+
+        <ContentView Grid.Row="1" Grid.ColumnSpan="3" 
+                     x:Name="contentView"/>
+    </Grid>
+</ContentPage>
+
