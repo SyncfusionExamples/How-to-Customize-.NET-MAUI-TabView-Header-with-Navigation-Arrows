@@ -5,40 +5,38 @@ This article guides how to customize the [.NET MAUI TabView](https://www.syncfus
 The following XAML code snippet demonstrates how to set up the layout using a Grid control, which includes navigation arrows and the TabView.
 
 ```xml
-<Grid ColumnDefinitions="50,*,50" HorizontalOptions="Center" RowDefinitions="50,*">
-    <Label Text=">" Grid.Column="0"
-           Rotation="180" TextColor="Black"
-           FontSize="Medium"
-           VerticalTextAlignment="Center"
-           HorizontalTextAlignment="Center"
-           Background="Transparent">
-        <Label.GestureRecognizers>
-            <TapGestureRecognizer Tapped="LeftArrowClicked"/>
-        </Label.GestureRecognizers>
-    </Label>
+<Border>
+    <Grid ColumnDefinitions="50,*,50" HorizontalOptions="Center" RowDefinitions="50,*">
+        <Label Text=">" Rotation="180" FontSize="Medium" VerticalTextAlignment="Center" 
+               HorizontalTextAlignment="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnLeftArrowClicked"/>
+            </Label.GestureRecognizers>
+        </Label>
+        <tabView:SfTabView x:Name="tabView" 
+                           Grid.Column="1" 
+                           SelectionChanged="OnSelectionChanged">
+            <tabView:SfTabView.Items >
+                <tabView:SfTabItem x:Name="call" Header="Call"/>
 
-    <tabView:SfTabView x:Name="tabView"
-                       Grid.Column="1"
-                       SelectionChanged="tabView_SelectionChanged"
-                       TabBarBackground="HotPink">
-        <tabView:SfTabView.Items>
-            <!-- Add your tab items here -->
-        </tabView:SfTabView.Items>
-    </tabView:SfTabView>
+                <tabView:SfTabItem x:Name="favorite" Header="Favorite"/>
 
-    <Label Text=">" Grid.Column="2"
-           TextColor="Black"
-           FontSize="Medium"
-           VerticalTextAlignment="Center"
-           HorizontalTextAlignment="Center"
-           Background="Transparent">
-        <Label.GestureRecognizers>
-            <TapGestureRecognizer Tapped="RightArrowClicked"/>
-        </Label.GestureRecognizers>
-    </Label>
+                <tabView:SfTabItem x:Name="contacts" Header="Contacts" />
 
-    <ContentView Grid.Row="1" Grid.ColumnSpan="3" x:Name="contentView"/>
-</Grid>
+                <tabView:SfTabItem x:Name="more" Header="More"/>
+            </tabView:SfTabView.Items>
+        </tabView:SfTabView>
+
+        <Label Text=">" Grid.Column="2" FontSize="Medium" VerticalTextAlignment="Center" 
+               HorizontalTextAlignment="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnRightArrowClicked"/>
+            </Label.GestureRecognizers>
+        </Label>
+
+        <ContentView x:Name="contentView" Grid.Row="1" Grid.ColumnSpan="3"/>
+    </Grid>
+</Border>
 ```
 
 **C#**
@@ -58,7 +56,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    private void tabView_SelectionChanged(object sender, TabSelectionChangedEventArgs e)
+    private void OnSelectionChanged(object sender, TabSelectionChangedEventArgs e)
     {
         contentView.Content = null;
         // Assign content based on the new index
@@ -79,7 +77,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    private void LeftArrowClicked(object sender, TappedEventArgs e)
+    private void OnLeftArrowClicked(object sender, TappedEventArgs e)
     {
         if(tabView != null && tabView.SelectedIndex > 0)
         {
@@ -87,7 +85,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    private void RightArrowClicked(object sender, TappedEventArgs e)
+    private void OnRightArrowClicked(object sender, TappedEventArgs e)
     {
         if(tabView != null && tabView.SelectedIndex < tabView.Items.Count - 1)
         {
@@ -109,4 +107,4 @@ public partial class MainPage : ContentPage
 
 **Output**
 
-![ArrowNavigation.gif](https://support.syncfusion.com/kb/agent/attachment/article/17139/inline?token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4MzAyIiwib3JnaWQiOiIzIiwiaXNzIjoic3VwcG9ydC5zeW5jZnVzaW9uLmNvbSJ9.mMnQaLzxpU7zCbjcyPVZFhkrGt6AlFv0g802o0VIdhg)
+![TabView_ArrowNavigation.gif](https://support.bolddesk.com/kb/agent/attachment/article/17139/inline?token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4NDg1Iiwib3JnaWQiOiIzIiwiaXNzIjoic3VwcG9ydC5ib2xkZGVzay5jb20ifQ.Ni1ucflnalnu0eW5XPvm3hnySXvIxuSlieFy8AJVhng)

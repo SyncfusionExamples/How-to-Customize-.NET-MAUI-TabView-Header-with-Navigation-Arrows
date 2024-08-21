@@ -7,7 +7,7 @@
     <ContentView.BindingContext>
         <local:FavoriteViewModel/>
     </ContentView.BindingContext>
-    <VerticalStackLayout Background="BlanchedAlmond">
+    <VerticalStackLayout>
         <ListView RowHeight="50"
                   ItemsSource="{Binding FavoriteListCollection}" >
             <ListView.ItemTemplate>

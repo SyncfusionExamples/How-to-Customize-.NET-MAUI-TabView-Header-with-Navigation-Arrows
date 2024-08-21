@@ -14,7 +14,7 @@ namespace TabViewSample
             }
         }
 
-        private void tabView_SelectionChanged(object sender, TabSelectionChangedEventArgs e)
+        private void OnSelectionChanged(object sender, TabSelectionChangedEventArgs e)
         {
             contentView.Content = null;
             // Assign content based on the new index
@@ -35,7 +35,7 @@ namespace TabViewSample
             }
         }
 
-        private void LeftArrowClicked(object sender, TappedEventArgs e)
+        private void OnLeftArrowClicked(object sender, TappedEventArgs e)
         {
             if (tabView != null)
             {
@@ -46,7 +46,7 @@ namespace TabViewSample
             }
         }
 
-        private void RightArrowClicked(object sender, TappedEventArgs e)
+        private void OnRightArrowClicked(object sender, TappedEventArgs e)
         {
             if (tabView != null)
             {

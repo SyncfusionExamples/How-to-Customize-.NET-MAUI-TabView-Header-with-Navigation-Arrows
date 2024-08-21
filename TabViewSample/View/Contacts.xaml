@@ -7,7 +7,7 @@
     <ContentView.BindingContext>
         <local:ContactsViewModel/>
     </ContentView.BindingContext>
-    <VerticalStackLayout Background="BlanchedAlmond">
+    <VerticalStackLayout>
         <ListView RowHeight="50" ItemsSource="{Binding ContactsListCollection}">
             <ListView.ItemTemplate>
                 <DataTemplate>

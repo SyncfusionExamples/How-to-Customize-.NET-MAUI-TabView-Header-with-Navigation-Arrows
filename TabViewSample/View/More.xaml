@@ -8,7 +8,7 @@
         <local:MoreViewModel/>
     </ContentView.BindingContext>
 
-    <ScrollView Padding="0,30,0,0" VerticalOptions="FillAndExpand" Background="BlanchedAlmond">
+    <ScrollView Padding="0,30,0,0" VerticalOptions="FillAndExpand">
         <Grid >
             <Label Text="{Binding Text}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
         </Grid>

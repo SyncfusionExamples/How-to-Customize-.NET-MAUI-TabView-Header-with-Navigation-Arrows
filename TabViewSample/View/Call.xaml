@@ -8,7 +8,7 @@
         <local:CallViewModel/>
     </ContentView.BindingContext>
     
-    <VerticalStackLayout Background="BlanchedAlmond">
+    <VerticalStackLayout>
         <ListView RowHeight="50" x:Name="callList"
                   ItemsSource="{Binding CallListCollection}">
             <ListView.ItemTemplate>

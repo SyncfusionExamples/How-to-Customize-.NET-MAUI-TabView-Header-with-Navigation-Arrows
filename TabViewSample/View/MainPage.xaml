@@ -4,51 +4,42 @@
              x:Class="TabViewSample.MainPage"
              xmlns:tabView="clr-namespace:Syncfusion.Maui.TabView;assembly=Syncfusion.Maui.TabView"
              WidthRequest="{x:OnPlatform WinUI='500'}">
+    <Border>
+        <Grid ColumnDefinitions="50,*,50" HorizontalOptions="Center" RowDefinitions="50,*">
+            <Label Text=">" 
+                    Rotation="180"
+                    FontSize="Medium"
+                    VerticalTextAlignment="Center" 
+                    HorizontalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLeftArrowClicked"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <tabView:SfTabView x:Name="tabView" 
+                               Grid.Column="1" 
+                               SelectionChanged="OnSelectionChanged">
+                <tabView:SfTabView.Items >
+                    <tabView:SfTabItem x:Name="call" Header="Call"/>
 
-    <Grid ColumnDefinitions="50,*,50" HorizontalOptions="Center" RowDefinitions="50,*">
-        <Label Text=">"  Grid.Column="0"
-                Rotation="180" TextColor="Black"
-                FontSize="Medium"
-                VerticalTextAlignment="Center" 
-                HorizontalTextAlignment="Center"
-                Background="Transparent">
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer Tapped="LeftArrowClicked"/>
-            </Label.GestureRecognizers>
-        </Label>
-        <tabView:SfTabView x:Name="tabView" 
-                           Grid.Column="1" 
-                           SelectionChanged="tabView_SelectionChanged"
-                           TabBarBackground="HotPink">
-            <tabView:SfTabView.Items >
-                <tabView:SfTabItem Header="Call" x:Name="call">
-                </tabView:SfTabItem>
+                    <tabView:SfTabItem x:Name="favorite" Header="Favorite"/>
 
-                <tabView:SfTabItem Header="Favorite"  x:Name="favorite" >
-                </tabView:SfTabItem>
+                    <tabView:SfTabItem x:Name="contacts" Header="Contacts" />
 
-                <tabView:SfTabItem Header="Contacts"  x:Name="contacts">
-                </tabView:SfTabItem>
+                    <tabView:SfTabItem x:Name="more" Header="More"/>
+                </tabView:SfTabView.Items>
+            </tabView:SfTabView>
 
-                <tabView:SfTabItem Header="More"  x:Name="more">
-                </tabView:SfTabItem>
-            </tabView:SfTabView.Items>
-        </tabView:SfTabView>
+            <Label Text=">" Grid.Column="2"
+                    FontSize="Medium"
+                    VerticalTextAlignment="Center" 
+                    HorizontalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnRightArrowClicked"/>
+                </Label.GestureRecognizers>
+            </Label>
 
-
-        <Label Text=">" Grid.Column="2"
-                TextColor="Black"
-                FontSize="Medium"
-                VerticalTextAlignment="Center" 
-                HorizontalTextAlignment="Center"
-                Background="Transparent">
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer Tapped="RightArrowClicked"/>
-            </Label.GestureRecognizers>
-        </Label>
-
-        <ContentView Grid.Row="1" Grid.ColumnSpan="3" 
-                     x:Name="contentView"/>
-    </Grid>
+            <ContentView x:Name="contentView" Grid.Row="1" Grid.ColumnSpan="3"/>
+        </Grid>
+    </Border>
 </ContentPage>
 
