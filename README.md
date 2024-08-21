@@ -95,15 +95,15 @@ public partial class MainPage : ContentPage
 }
 ```
 
-- **Grid Layout**: The layout is structured using a Grid with three columns. The first and third columns contain the navigation arrows, while the middle column holds the SfTabView.
+- **Grid Layout**: The layout is structured using a Grid with three columns. The first and third columns contain the navigation arrows, while the middle column holds the Tab View.
   
 - **Navigation Arrows**: Two Label controls represent the left and right arrows. They utilize `TapGestureRecognizer` to handle click events for navigating between tabs.
 
-- **TabView Control**: The TabView is positioned in the center column of the grid. It contains multiple tab items, and the `SelectionChanged` event is used to update the content displayed in the ContentView based on the selected tab.
+- **TabView Control**: The Tab View is positioned in the center column of the grid. It contains multiple tab items, and the [SelectionChanged](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.TabView.SfTabView.html#Syncfusion_Maui_TabView_SfTabView_SelectionChanged) event is used to update the content displayed in the ContentView based on the selected tab.
 
-- **ContentView**: A ContentView is placed below the TabView to show the content corresponding to the selected tab.
+- **ContentView**: A ContentView is placed below the Tab View to show the content corresponding to the selected tab.
 
-- **Code-Behind Logic**: The constructor initializes the content of the first tab. The `tabView_SelectionChanged` event updates the ContentView based on the selected tab index, while the `LeftArrowClicked` and `RightArrowClicked` events adjust the `SelectedIndex` of the TabView to navigate through the tabs.
+- **Code-Behind Logic**: The constructor initializes the content of the first tab. The `OnSelectionChanged` event updates the ContentView based on the selected tab index, while the `OnLeftArrowClicked` and `OnRightArrowClicked` events adjust the `SelectedIndex` of the Tab View to navigate through the tabs.
 
 **Output**
 
