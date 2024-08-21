@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TabViewSample.MainPage"
+             xmlns:tabView="clr-namespace:Syncfusion.Maui.TabView;assembly=Syncfusion.Maui.TabView"
+             WidthRequest="{x:OnPlatform WinUI='500'}">
+    <Border>
+        <Grid ColumnDefinitions="50,*,50" HorizontalOptions="Center" RowDefinitions="50,*">
+            <Label Text=">" 
+                    Rotation="180"
+                    FontSize="Medium"
+                    VerticalTextAlignment="Center" 
+                    HorizontalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLeftArrowClicked"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <tabView:SfTabView x:Name="tabView" 
+                               Grid.Column="1" 
+                               SelectionChanged="OnSelectionChanged">
+                <tabView:SfTabView.Items >
+                    <tabView:SfTabItem x:Name="call" Header="Call"/>
+
+                    <tabView:SfTabItem x:Name="favorite" Header="Favorite"/>
+
+                    <tabView:SfTabItem x:Name="contacts" Header="Contacts" />
+
+                    <tabView:SfTabItem x:Name="more" Header="More"/>
+                </tabView:SfTabView.Items>
+            </tabView:SfTabView>
+
+            <Label Text=">" Grid.Column="2"
+                    FontSize="Medium"
+                    VerticalTextAlignment="Center" 
+                    HorizontalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnRightArrowClicked"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <ContentView x:Name="contentView" Grid.Row="1" Grid.ColumnSpan="3"/>
+        </Grid>
+    </Border>
+</ContentPage>
+
