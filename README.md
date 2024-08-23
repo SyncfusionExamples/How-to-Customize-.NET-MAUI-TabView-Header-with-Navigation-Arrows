@@ -1,8 +1,8 @@
-This article guides how to customize the [.NET MAUI TabView](https://www.syncfusion.com/maui-controls/maui-tab-view) header by adding navigation arrows for the next and previous tabs.
+This article guides how to customize the [.NET MAUI Tab View](https://www.syncfusion.com/maui-controls/maui-tab-view) header by adding navigation arrows for the next and previous tabs.
 
 **XAML Code**
 
-The following XAML code snippet demonstrates how to set up the layout using a Grid control, which includes navigation arrows and the TabView.
+The following XAML code snippet demonstrates how to set up the layout using a Grid control, which includes navigation arrows and the .NET MAUI Tab View.
 
 ```xml
 <Border>
@@ -95,11 +95,11 @@ public partial class MainPage : ContentPage
 }
 ```
 
-- **Grid Layout**: The layout is structured using a Grid with three columns. The first and third columns contain the navigation arrows, while the middle column holds the Tab View.
+- **Grid Layout**: The layout is structured using a Grid with three columns. The first and third columns contain the navigation arrows, while the middle column holds the .NET MAUI Tab View.
   
 - **Navigation Arrows**: Two Label controls represent the left and right arrows. They utilize `TapGestureRecognizer` to handle click events for navigating between tabs.
 
-- **TabView Control**: The Tab View is positioned in the center column of the grid. It contains multiple tab items, and the [SelectionChanged](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.TabView.SfTabView.html#Syncfusion_Maui_TabView_SfTabView_SelectionChanged) event is used to update the content displayed in the ContentView based on the selected tab.
+- **TabView Control**: The .NET MAUI Tab View is positioned in the center column of the grid. It contains multiple tab items, and the [SelectionChanged](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.TabView.SfTabView.html#Syncfusion_Maui_TabView_SfTabView_SelectionChanged) event is used to update the content displayed in the ContentView based on the selected tab.
 
 - **ContentView**: A ContentView is placed below the Tab View to show the content corresponding to the selected tab.
 
@@ -107,4 +107,4 @@ public partial class MainPage : ContentPage
 
 **Output**
 
-![TabView_ArrowNavigation.gif](https://support.bolddesk.com/kb/agent/attachment/article/17139/inline?token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4NDg1Iiwib3JnaWQiOiIzIiwiaXNzIjoic3VwcG9ydC5ib2xkZGVzay5jb20ifQ.Ni1ucflnalnu0eW5XPvm3hnySXvIxuSlieFy8AJVhng)
+![TabView_Arrow_Navigation.gif](https://support.syncfusion.com/kb/agent/attachment/article/17139/inline?token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4NTk1Iiwib3JnaWQiOiIzIiwiaXNzIjoic3VwcG9ydC5zeW5jZnVzaW9uLmNvbSJ9.ll9IZ0fxJIgADln6AG_0MZnO5p8JdXqkrL9w6Ps2tiA)
